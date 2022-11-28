@@ -22,4 +22,14 @@ class Game():
         print('Spock vaporizes Rock')
         print('May the best player win')
 
+    def player_select(self):
+        print('Enter 1 for 1 Player. Enter 2 for 2 players')
+
+    def choose_gesture(self):
+        print("Choose 0 for rock")
+        print('Choose 1 for paper')
+        print('Choose 2 for scissors')
+        print('Choose 3 for lizard')
+        print('Choose 4 for Spock')
+        
     
