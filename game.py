@@ -1,5 +1,6 @@
 from player import Player
-
+from player import Human
+from player import AI
 
 
 class Game():
@@ -24,10 +25,17 @@ class Game():
 
     def player_select(self):
         print('Enter 1 for 1 Player. Enter 2 for 2 players')
-        self.game_mode = int(input(''))
+        self.game_mode = input('')
+
+        if self.game_mode == 1:
+            self.player_one = Human()
+            self.player_two = AI()
+
+        elif self.game_mode == 2:
+            self.player_one = Human()
+            self.player_two = Human()
+
         # if statement needs to go here for player selection
-        print("Enter your")
-        print(f'Welcome')
         # An input needs to be placed here for selection
 
     def choose_gesture(self):
@@ -36,6 +44,8 @@ class Game():
         print('Choose 2 for scissors')
         print('Choose 3 for lizard')
         print('Choose 4 for Spock')
+
+
 
     def display_winner():
         pass
