@@ -5,7 +5,7 @@
 class Game():
 
     def welcome(self):
-        print('Welcome to a wonderful game of chance!')
+        print('Welcome to ROCK, PAPER, SCISSORS, LIZARD, SPOCK!')
         print('Each player picks a gesture and reveals it at the same time. Player with the winning gesture wins the round.')
         print('If both players use the same gesture, that is a tie. The round will be replayed.')
         print('First player to get two wins is crowned the winner.')
@@ -24,7 +24,8 @@ class Game():
 
     def player_select(self):
         print('Enter 1 for 1 Player. Enter 2 for 2 players')
-
+        # An input needs to be placed here for selection
+        
     def choose_gesture(self):
         print("Choose 0 for rock")
         print('Choose 1 for paper')
