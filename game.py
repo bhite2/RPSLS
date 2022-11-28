@@ -1,4 +1,4 @@
-
+from player import Player
 
 
 
@@ -24,8 +24,12 @@ class Game():
 
     def player_select(self):
         print('Enter 1 for 1 Player. Enter 2 for 2 players')
+        self.game_mode = int(input(''))
+        # if statement needs to go here for player selection
+        print("Enter your")
+        print(f'Welcome')
         # An input needs to be placed here for selection
-        
+
     def choose_gesture(self):
         print("Choose 0 for rock")
         print('Choose 1 for paper')
@@ -37,7 +41,7 @@ class Game():
         pass
 
     def run_game(self):
-        self.welcome
-        self.player_select
-        self.choose_gesture
-        self.display_winner
+        self.welcome()
+        self.player_select()
+        self.choose_gesture()
+        self.display_winner()
