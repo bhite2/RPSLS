@@ -31,5 +31,12 @@ class Game():
         print('Choose 2 for scissors')
         print('Choose 3 for lizard')
         print('Choose 4 for Spock')
-        
-    
+
+    def display_winner():
+        pass
+
+    def run_game(self):
+        self.welcome
+        self.player_select
+        self.choose_gesture
+        self.display_winner
