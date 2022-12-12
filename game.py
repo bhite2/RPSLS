@@ -1,6 +1,6 @@
 from player import Player
-from player import Human
-from player import AI
+from human import Human
+from ai import AI
 
 
 class Game():
@@ -36,17 +36,18 @@ class Game():
             print('You have selected Versus Mode')
             self.player_one = Human()
             self.player_two = Human()
+            
+    def gesture_selection(self):
+        while self.player_one.player_score < 2 and self.player_two.player_score < 2:
+            self.player_one.choose_gesture()
+            self.player_two.choose_gesture()
+            self.compare_gesture()
 
         
         # Want player to pick own name. Does this need it's own function
 
-    def choose_gesture(self):
-        print("Choose 0 for rock")
-        print('Choose 1 for paper')
-        print('Choose 2 for scissors')
-        print('Choose 3 for lizard')
-        print('Choose 4 for Spock')
-
+    def compare_gesture(self):
+        
         if self.player_one.chosen_gesture == 'rock':
             if self.player_two.chosen_gesture == 'rock':
                 print('It is a tie.')
@@ -130,12 +131,12 @@ class Game():
                 print(f'lizard poisons spock {self.player_one.name} wins')
         
         # 5th line
-        if self.player_one.chosen_gesture == 'spock':
+        if self.player_one.chosen_gesture == 'Spock':
             if self.player_two.chosen_gesture == 'rock':
                 self.player_one.player_score += 1
-                print(f'spock vaporizes rock {self.player_one.name} wins')
+                print(f'Spock vaporizes rock {self.player_one.name} wins')
             
-            elif self.player_two.chosen_gesture == 'spock':
+            elif self.player_two.chosen_gesture == 'Spock':
                 print('Its a tie') 
 
             elif self.player_two.chosen_gesture == 'paper':
@@ -152,10 +153,16 @@ class Game():
 
         #If and elif statements for all possible outcomes
     def display_winner():
-        pass
+        if (self.player_one.player_score == 2):
+            print(f'{self.player_one.name} wins the game!')
+
+        elif (self.player_two.player_score == 2):
+            print(f'{self.player_two.name} wins the game!')
 
     def run_game(self):
         self.welcome()
         self.player_select()
-        self.choose_gesture()
+        self.gesture_selection()
         self.display_winner()
+
+        
